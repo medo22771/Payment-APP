@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/history_table_header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="horizontal"
+        android:paddingTop="16dp">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="2"
+            android:text="@string/label_history_time"
+            android:theme="@style/HistoryTableTextStyle" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_transaction_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="2"
+            android:text="@string/label_history_transaction_id"
+            android:theme="@style/HistoryTableTextStyle" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_card_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="2"
+            android:text="@string/label_history_card_number"
+            android:theme="@style/HistoryTableTextStyle" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:layout_weight="1"
+            android:text="@string/label_history_amount"
+            android:theme="@style/HistoryTableTextStyle" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|end"
+            android:textAlignment="textEnd"
+            android:layout_weight="1"
+            android:text="@string/label_history_status"
+            android:theme="@style/HistoryTableTextStyle" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/history_row_receipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_weight="1"
+            android:text="@string/label_history_receipt"
+            android:theme="@style/HistoryTableTextStyle" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/history_table_header"
+        tools:listitem="@layout/history_table_row" />
+
+
+</RelativeLayout>

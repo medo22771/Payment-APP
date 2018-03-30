@@ -1,0 +1,153 @@
+<resources>
+    <string name="app_name">YelloPay</string>
+
+    // labels are proof of concept, it has to be agreed with Yello
+    <string name="msg_payment">PAYMENT</string>
+    <string name="msg_cashback">CASHBACK</string>
+    <string name="msg_increased_amount">TIP</string>
+    <string name="msg_refund">REFUND</string>
+
+    <string name="msg_d2">ENTER AMOUNT AND CONFIRM</string>
+    <string name="msg_d5">INSERT OR PRESENT CARD</string>
+    <string name="msg_0e">PLEASE WAIT</string>
+    <string name="msg_16">PROCESSING …</string>
+    <string name="msg_blank"></string>
+
+    <string name="label_receipt_result">TRANSACTION FINISHED</string>
+    <string name="label_receipt">RECEIPT</string>
+    <string name="label_receipt_print">Print</string>
+    <string name="label_receipt_print_sms">SMS</string>
+    <string name="label_receipt_print_email">Email</string>
+    <string name="label_receipt_print_noreceipt">No Receipt</string>
+
+    <string name="label_enter_email">ENTER EMAIL ADDRESS </string>
+
+    <string name="label_signature">SIGNATURE</string>
+    <string name="label_signature_agreement">I agree to pay %1$s %2$s</string>
+
+    <string name="button_help">NEED HELP ?</string>
+
+    <string name="label_last_purchase">YOUR LAST PURCHASE</string>
+    <string name="label_rate_purchase">RATE YOUR PURCHASE</string>
+
+    <string name="label_merchant_id">MERCHANT ID</string>
+    <string name="label_attempts">Attempts Left:</string>
+    <string name="hint_login">LOGIN</string>
+    <string name="hint_password">PASSWORD</string>
+
+    <string name="hint_manual_entry_amount">AMOUNT</string>
+    <string name="hint_manual_entry_tip">TIP</string>
+    <string name="hint_manual_entry_card">CARD NUMBER</string>
+    <string name="hint_manual_entry_expiration">MM/YY</string>
+    <string name="hint_manual_entry_cvv">CVV</string>
+    <string name="hint_manual_entry_zip">ZIP</string>
+    <string name="hint_manual_entry_street">STREET</string>
+    <string name="hint_manual_entry_notes">NOTES (optional)</string>
+
+    <string-array name="pay_options">
+        <item>POOR</item>
+        <item>FAIR</item>
+        <item>GOOD</item>
+        <item>VERY GOOD</item>
+        <item>EXCELLENT</item>
+    </string-array>
+
+    <string name="label_history_time">Time/Date</string>
+    <string name="label_history_transaction_id">Transaction ID</string>
+    <string name="label_history_card_number">Card number</string>
+    <string name="label_history_amount">Amount</string>
+    <string name="label_history_status">Status</string>
+    <string name="label_history_receipt">Receipt</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="navigation_drawer_section_home">TRANSACTION</string>
+    <string name="navigation_drawer_section_other">SERVICES</string>
+    <string name="navigation_drawer_item_auth_only">Auth-only</string>
+    <string name="navigation_drawer_item_payment">Payment</string>
+    <string name="navigation_drawer_item_cash_back">Cash Back</string>
+    <string name="navigation_drawer_item_incr_amount">Tip</string>
+    <string name="navigation_drawer_item_manual_entry">Manual Entry</string>
+    <string name="navigation_drawer_item_historic">History</string>
+    <string name="navigation_drawer_item_diagnostics">Diagnostics</string>
+    <string name="navigation_drawer_item_start_transaction">GO</string>
+    <string name="navigation_drawer_item_upload_file">Upload file</string>
+    <string name="navigation_drawer_item_settings">Settings</string>
+    <string name="navigation_drawer_item_version">LEGAL</string>
+
+    <string name="dialog_button_close">Close</string>
+    <string name="dialog_button_notes">Notes</string>
+    <string name="dialog_button_receipt">Receipt</string>
+    <string name="dialog_button_refund">Refund</string>
+    <string name="dialog_button_cancel">Cancel</string>
+
+    <string name="button_back">Back</string>
+
+    <string name="button_upload_file">Select and upload file</string>
+    <string name="dialog_progress_title">Upload file</string>
+    <string name="dialog_progress_message">Uploading …</string>
+    <string name="dialog_upload_success">Upload successful</string>
+    <string name="dialog_upload_fail">Upload failed</string>
+
+    <string name="receipt_email_subject">YelloPay RECEIPT</string>
+    <string name="receipt_email_send">Send</string>
+    <string name="receipt_email_fail">Error: Email not sent</string>
+    <string name="receipt_email_success">Email successfully sent</string>
+    <string name="receipt_email_wrong_format">Incorrect email address</string>
+
+    <string name="settings_email_header">Email settings</string>
+    <string name="settings_email_address">Email address</string>
+    <string name="settings_email_password">Password</string>
+    <string name="settings_email_host">Host</string>
+
+    <string name="settings_user_header">User settings</string>
+    <string name="settings_add_user_header">Add user</string>
+    <string name="settings_add_user_summary">Add a user in the database</string>
+
+    <string name="settings_debug_header">Debug</string>
+    <string name="settings_gateway">Gateways</string>
+    <string name="settings_gateway_summary">Particular gateway server options</string>
+    <string name="settings_gateway_yello_url">Yello Gateways URLs</string>
+    <string name="settings_gateway_yello_url_summary">Particular URLs of Yello Gateway server</string>
+
+    <string name="dialog_email_progress_title">Send email</string>
+    <string name="dialog_email_progress_message">Sending email…</string>
+
+    <string name="error_enter_login">Please enter your login</string>
+    <string name="error_enter_password">Please enter your password</string>
+    <string name="error_login">Can\'t login, please check your credentials</string>
+
+    <string name="database_add_ok">User added with success</string>
+    <string name="database_add_fail">Error while adding the user to the database</string>
+    <string name="navigation_drawer_item_printer">Printer</string>
+    <string name="printer_error_search">No device found</string>
+    <string name="printer_success_connect">Successfully connected to\u0020</string>
+    <string name="printer_error_connect">Error while connecting to\u0020</string>
+    <string name="printer_search">Searching for a printer&#8230;</string>
+    <string name="printer_connect">Connecting to printer\u0020</string>
+    <string name="processing">Processing</string>
+
+    <!-- gateway_preferences_values -->
+    <string name="gateway_preferences" translatable="false">Gateway preferences</string>
+    <string name="gateway_disable" translatable="false">Disable (approval simulation)</string>
+    <string name="gateway_nexo_test" translatable="false">Simple echo NEXO test server)</string>
+    <string name="gateway_safecharge" translatable="false">Safecharge (Safecharge messages)</string>
+    <string name="gateway_yello" translatable="false">Yello Gateway (Nexo messages)</string>
+
+    <!-- Yello Gateway URLs -->
+    <string name="gateway_preferences_yello_url" translatable="false">Yello Gateway URL</string>
+    <string name="gateway_yello_prod_url" translatable="false">
+        http://41.38.100.254:9002/Gateway/services/1
+    </string>
+    <string name="gateway_yello_test_url" translatable="false">
+        http://41.38.100.254:9002/Gateway_Test/services/1/1
+    </string>
+    <string name="cancel_last_transaction">Cancel last transaction</string>
+
+    <string name="Error_Text_View">Error</string>
+    <string name="result_text_default">Result</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

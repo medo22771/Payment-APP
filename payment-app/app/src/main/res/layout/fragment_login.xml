@@ -1,0 +1,95 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/label_merchant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_merchant_id"
+        android:textAlignment="center"
+        style="@style/YelloTextView" />
+
+    <EditText
+        android:id="@+id/input_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/label_merchant"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:hint="@string/hint_login"
+        android:imeOptions="actionNext"
+        android:maxLines="1"
+        android:inputType="text"
+        android:textAlignment="center"
+        android:theme="@style/ManualEntryEditStyle" />
+
+    <EditText
+        android:id="@+id/input_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:hint="@string/hint_password"
+        android:inputType="textPassword"
+        android:maxLines="1"
+        android:textAlignment="center"
+        android:theme="@style/ManualEntryEditStyle" />
+
+    <LinearLayout
+        android:id="@+id/line_attempts"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/input_password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/label_attempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_attempts"
+            android:textColor="@color/colorWhite" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_attempts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text=""
+            android:textColor="@color/colorWhite" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp">
+
+        <Button
+            android:id="@+id/btn_cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/size_pin_button"
+            android:layout_height="@dimen/size_pin_button"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_cancel_background_selector"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btn_submit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/size_pin_button"
+            android:layout_height="@dimen/size_pin_button"
+            android:background="@drawable/button_ok_background_selector"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>

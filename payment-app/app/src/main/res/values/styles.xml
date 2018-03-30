@@ -1,0 +1,69 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:windowBackground">@color/colorBlack</item>
+        <item name="preferenceTheme">@style/SettingsTheme</item>
+    </style>
+
+    <style name="ManualEntryEditStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/colorAccent</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textAlignment">center</item>
+        <item name="colorControlNormal">@color/colorAccent</item>
+        <item name="colorControlActivated">@color/colorWhite</item>
+        <item name="colorControlHighlight">@color/colorWhite</item>
+    </style>
+
+    <style name="HistoryTableTextStyle">
+        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ToolbarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
+
+    <style name="NavigationViewStyle">
+        <item name="android:background">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/material_primary_text</item>
+        <item name="android:textColorSecondary">@color/material_secondary_text</item>
+    </style>
+
+    <style name="NavigationViewSwitch" parent="Theme.AppCompat.Light">
+        <item name="colorControlActivated">@color/colorBlack</item>
+        <item name="colorSwitchThumbNormal">@color/colorBlack</item>
+    </style>
+
+    <style name="NavigationViewCheckBox" parent="AppTheme">
+        <item name="colorAccent">@color/colorBlack</item>
+    </style>
+
+    <style name="DialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:textColor">@color/colorBlack</item>
+    </style>
+
+    <style name="SettingsTheme" parent="PreferenceThemeOverlay.v14.Material">
+        <item name="editTextPreferenceStyle">@style/PreferenceDialogEditText</item>
+        <item name="android:textColorSecondary">@color/colorWhite</item>
+    </style>
+
+    <style name="PreferenceDialogEditText" parent="Preference.DialogPreference.EditTextPreference">
+        <item name="android:dialogLayout">@layout/preference_dialog_edit</item>
+    </style>
+
+    <style name="YelloTextView">
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/transaction_text_size</item>
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+</resources>

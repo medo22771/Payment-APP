@@ -1,0 +1,178 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/line_amount_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true">
+
+                <com.blackcat.currencyedittext.CurrencyEditText
+                    android:id="@+id/edit_amount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_amount"
+                    android:nextFocusDown="@+id/edit_tip"
+                    android:theme="@style/ManualEntryEditStyle"
+                    app:allow_negative_values="true">
+
+                    <requestFocus />
+
+                </com.blackcat.currencyedittext.CurrencyEditText>
+
+                <EditText
+                    android:id="@+id/edit_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_tip"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edit_card_number"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_expiration_cvv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line_amount_tip"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="5dp">
+
+                <EditText
+                    android:id="@+id/edit_card_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_card"
+                    android:inputType="number"
+                    android:maxLength="16"
+                    android:nextFocusDown="@+id/edit_expiration"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+                <EditText
+                    android:id="@+id/edit_expiration"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ems="5"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_expiration"
+                    android:inputType="number"
+                    android:nextFocusDown="@+id/edit_cvv"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+                <EditText
+                    android:id="@+id/edit_cvv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ems="4"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_cvv"
+                    android:inputType="number"
+                    android:maxLength="4"
+                    android:nextFocusDown="@+id/edit_zip"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/line_expiration_cvv"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp">
+
+                <EditText
+                    android:id="@+id/edit_zip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ems="3"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_zip"
+                    android:inputType="number"
+                    android:maxLength="10"
+                    android:nextFocusDown="@+id/edit_street"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+                <EditText
+                    android:id="@+id/edit_street"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_weight="1"
+                    android:ems="8"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_street"
+                    android:inputType="text"
+                    android:nextFocusDown="@+id/edit_note"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+                <EditText
+                    android:id="@+id/edit_note"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:ems="10"
+                    android:focusable="true"
+                    android:hint="@string/hint_manual_entry_notes"
+                    android:inputType="number"
+                    android:theme="@style/ManualEntryEditStyle" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/line_buttons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btn_cancel"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_cancel_background_selector"
+            android:textStyle="bold" />
+
+        <ImageButton
+            android:id="@+id/btn_submit"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_ok_background_selector"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/tv_trx_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/high_text_size" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_msg_insert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_trx_amount"
+            android:layout_centerHorizontal="true"
+            android:text="@string/msg_d5"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size" />
+
+
+        <LinearLayout
+            android:id="@+id/virtual_led"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_msg_insert"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/led_ind1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/vled_indicator" />
+
+            <ImageView
+                android:id="@+id/led_ind2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/vled_indicator" />
+
+            <ImageView
+                android:id="@+id/led_ind3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/vled_indicator" />
+
+            <ImageView
+                android:id="@+id/led_ind4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="15dp"
+                android:src="@drawable/vled_indicator" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_contactless"
+            android:layout_width="213dp"
+            android:layout_height="196dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:paddingTop="25dp"
+            android:src="@drawable/ctless_icon" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_go_back_insert"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="@dimen/size_pin_button"
+        android:layout_height="@dimen/size_pin_button"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:background="@drawable/button_cancel_background_selector" />
+</RelativeLayout>

@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion projectCompileSdkVersion
+    buildToolsVersion "${projectBuildToolsVersion}"
+
+    defaultConfig {
+        applicationId "com.yelloco.payment.api.test"
+        minSdkVersion 15//projectMinSdkVersion
+        targetSdkVersion projectTargetSdkVersion
+        versionCode projectVersionCode
+        versionName applicationVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    applicationVariants.all { variant -> renameArtifact(variant, "${apiTestName}-${defaultConfig.versionName}") }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:3.0.0', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    androidTestCompile 'com.android.support.test:runner:1.0.0'
+    androidTestCompile 'com.android.support.test:rules:1.0.0'
+    androidTestCompile 'com.android.support.test.espresso:espresso-intents:3.0.0'
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    testCompile 'junit:junit:4.12'
+    compile project(':api')
+}

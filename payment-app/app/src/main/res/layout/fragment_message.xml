@@ -1,0 +1,24 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/message_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/msg_blank"
+        style="@style/YelloTextView" />
+
+    <include
+        android:visibility="invisible"
+        layout="@layout/view_processing_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>

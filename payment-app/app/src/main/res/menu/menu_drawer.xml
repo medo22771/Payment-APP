@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:title="@string/navigation_drawer_section_home">
+        <menu>
+            <!-- Use blank icon for left indentation of items -->
+            <!-- AuthOnly disabled until it is implemented -->
+            <item
+                android:id="@+id/menu_item_payment"
+                android:title="@string/navigation_drawer_item_payment"
+                app:actionLayout="@layout/menu_item_check" />
+            <item
+                android:id="@+id/menu_item_incr_amount"
+                android:title="@string/navigation_drawer_item_incr_amount"
+                app:actionLayout="@layout/menu_item_check" />
+            <item
+                android:id="@+id/menu_item_cash_back"
+                android:title="@string/navigation_drawer_item_cash_back"
+                app:actionLayout="@layout/menu_item_check" />
+            <item
+                android:id="@+id/menu_item_auth_only"
+                android:title="@string/navigation_drawer_item_auth_only"
+                app:actionLayout="@layout/menu_item_switch" />
+            <item
+                android:id="@+id/menu_item_start_transaction"
+                android:title=""
+                app:actionLayout="@layout/menu_item_tv"/>
+        </menu>
+    </item>
+
+    <item android:title="@string/navigation_drawer_section_other">
+        <menu>
+            <item
+                android:id="@+id/menu_item_manual_entry"
+                android:title="@string/navigation_drawer_item_manual_entry" />
+            <item
+                android:id="@+id/menu_item_historic"
+                android:title="@string/navigation_drawer_item_historic" />
+            <item
+                android:id="@+id/menu_item_diagnostic"
+                android:title="@string/navigation_drawer_item_diagnostics" />
+            <item
+                android:id="@+id/menu_item_printer"
+                android:title="@string/navigation_drawer_item_printer" />
+            <item
+                android:id="@+id/menu_item_settings"
+                android:title="@string/navigation_drawer_item_settings" />
+            <item
+                android:id="@+id/menu_item_upload_file"
+                android:title="@string/navigation_drawer_item_upload_file" />
+        </menu>
+    </item>
+    <group>
+        <item
+            android:id="@+id/menu_item_version"
+            android:title="@string/navigation_drawer_item_version"
+            app:actionLayout="@layout/menu_item_tv" />
+    </group>
+</menu>

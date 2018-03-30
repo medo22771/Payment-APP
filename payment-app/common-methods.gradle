@@ -1,0 +1,13 @@
+def renameArtifact(variant, name) {
+    variant.outputs.each { output ->
+        def fullName = output.outputFile.name
+        def projectName = fullName.substring(0, fullName.indexOf('-'))
+
+        output.outputFileName = new File(
+                (String) output.outputFile.name.replace(projectName, name))
+    }
+}
+
+ext {
+    renameArtifact = this.&renameArtifact
+}

@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/btn_help"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/button_shape_rectangle"
+        android:text="@string/button_help"
+        android:textColor="@color/colorWhite"
+        android:textSize="15sp"
+        android:textStyle="bold" />
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/text_last_purchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_last_purchase"
+        android:textColor="@color/colorWhite"
+        android:textSize="30sp" />
+
+    <LinearLayout
+        android:id="@+id/layout_merchant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_last_purchase"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="25dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/logo_merchant"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:src="@drawable/merchant" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_merchant_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="16dp"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <View
+            android:layout_width="3dp"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            android:background="@color/colorWhite" />
+
+        <com.blackcat.currencyedittext.CurrencyEditText
+            android:id="@+id/text_amount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|center_horizontal"
+            android:focusableInTouchMode="false"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:allow_negative_values="true" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/text_rate_purchase"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/layout_rate"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/tv_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:text="@string/label_rate_purchase"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout_rate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp">
+
+        <ImageView
+            android:id="@+id/rate1"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/star_inactive" />
+
+        <ImageView
+            android:id="@+id/rate2"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/star_inactive" />
+
+        <ImageView
+            android:id="@+id/rate3"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/star_inactive" />
+
+        <ImageView
+            android:id="@+id/rate4"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/star_inactive" />
+
+        <ImageView
+            android:id="@+id/rate5"
+            android:layout_width="95dp"
+            android:layout_height="95dp"
+            android:background="@drawable/star_inactive" />
+    </LinearLayout>
+</RelativeLayout>

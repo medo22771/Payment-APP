@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/underLinen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
+            android:layout_marginTop="35dp"
+            android:text="@string/label_enter_email"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size">
+
+        </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+        <EditText
+            android:id="@+id/edit_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="250dp"
+            android:ems="5"
+            android:focusable="true"
+            android:inputType="textEmailAddress"
+            android:textAlignment="center"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_cancel_email"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/size_pin_button"
+            android:layout_height="@dimen/size_pin_button"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_cancel_background_selector" />
+
+        <Button
+            android:id="@+id/btn_val_email"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="@dimen/size_pin_button"
+            android:layout_height="@dimen/size_pin_button"
+            android:background="@drawable/button_ok_background_selector"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold" />
+    </LinearLayout>
+</RelativeLayout>

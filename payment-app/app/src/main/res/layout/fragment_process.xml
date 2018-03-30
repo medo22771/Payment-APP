@@ -1,0 +1,21 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/rl_processing"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/tv_title"
+        style="@style/YelloTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:text="@string/processing" />
+
+    <include
+        layout="@layout/view_processing_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+</RelativeLayout>

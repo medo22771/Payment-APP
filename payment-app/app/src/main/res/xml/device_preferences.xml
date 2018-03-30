@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory android:title="@string/settings_email_header">
+
+        <EditTextPreference
+            android:inputType="textEmailAddress"
+            android:key="EMAIL_ADDRESS"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/settings_email_address" />
+
+        <EditTextPreference
+            android:inputType="textPassword"
+            android:key="EMAIL_PASSWORD"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/settings_email_password" />
+
+        <EditTextPreference
+            android:inputType="text"
+            android:key="EMAIL_HOST"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:title="@string/settings_email_host" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_user_header">
+
+        <com.yelloco.payment.UserPreference
+            android:key="ADD_USER"
+            android:summary="@string/settings_add_user_summary"
+            android:title="@string/settings_add_user_header" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="@string/settings_debug_header">
+
+        <ListPreference
+            android:defaultValue="@string/gateway_yello"
+            android:entries="@array/gateway_preferences_values"
+            android:entryValues="@array/gateway_preferences_values"
+            android:key="@string/gateway_preferences"
+            android:title="@string/settings_gateway"
+            android:summary="@string/settings_gateway_summary"/>
+
+        <ListPreference
+            android:defaultValue="@string/gateway_yello_test_url"
+            android:entries="@array/gateway_preferences_yello_url_values"
+            android:entryValues="@array/gateway_preferences_yello_url_values"
+            android:key="@string/gateway_preferences_yello_url"
+            android:title="@string/settings_gateway_yello_url"
+            android:summary="@string/settings_gateway_yello_url_summary"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <!--WLINK address to access the secure element K81 including EMV kernel-->
+  <string name="id_wlink_ip">127.0.0.1</string>
+  <string name="id_wlink_port">4000</string>
+  <!--Whether we use simulation of EMV kernel on external IP -->
+  <string name="id_simulation">false</string>
+  <!--WLINK address to access the simulator of K81 - id_simulation is set to true-->
+  <string name="id_wlink_ip_simulator">10.199.212.15</string>
+  <string name="id_wlink_port_simulator">1525</string>
+
+  <!-- NEXO test Gateway address -->
+  <string name="gateway_nexo_test_address" translatable="false">50.3.68.225</string>
+  <integer name="gateway_nexo_test_port">5051</integer>
+  <integer name="gateway_nexo_test_timeout_ms">5000</integer>
+
+  <!-- Safecharge gateway address -->
+  <string name="gateway_safecharge_test_url" translatable="false">
+    https://certification-sandbox.safecharge.com/service.asmx/Process?
+  </string>
+</resources>

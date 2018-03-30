@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <!-- TODO: check unused resources before release -->
+    <!-- disabled because this project is still under development -->
+    <issue id="UnusedResources">
+        <ignore path="src/main/res"/>
+    </issue>
+
+    <!-- supress warning Image defined in density-independent drawable folder -->
+    <issue id="IconLocation">
+        <ignore path="src/main/res/drawable"/>
+    </issue>
+
+    <!-- TODO: required specification from Yello -->
+    <issue id="ContentDescription">
+        <ignore path="src/main/res/layout"/>
+    </issue>
+
+    <issue id="LabelFor">
+        <ignore path="src/main/res/layout"/>
+    </issue>
+
+    <!-- TODO: required assitance from Yello -->
+    <issue id="RelativeOverlap">
+        <ignore path="src/main/res/layout"/>
+    </issue>
+</lint>

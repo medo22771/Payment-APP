@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorBlack">
+
+    <com.blackcat.currencyedittext.CurrencyEditText
+        android:id="@+id/amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginEnd="16dp"
+        android:layout_marginTop="24dp"
+        android:focusable="false"
+        android:textSize="@dimen/currency_edit_text_size" />
+
+    <ImageView
+        android:id="@+id/status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/amount"
+        android:layout_marginTop="42dp"
+        android:background="@android:color/holo_green_dark"
+        android:paddingBottom="42dp"
+        android:paddingTop="52dp"
+        app:srcCompat="@drawable/button_ok_bis" />
+
+    <Button
+        android:id="@+id/button_close"
+        android:layout_width="match_parent"
+        android:layout_height="84dp"
+        android:layout_alignParentBottom="true"
+        android:text="@string/dialog_button_close"
+        android:textColor="@color/colorBlack"
+        android:textSize="30sp" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/status"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/button_notes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/dialog_button_notes"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/button_receipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/button_cancel"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="64dp"
+            android:text="@string/dialog_button_receipt"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/button_refund"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/button_notes"
+            android:layout_marginTop="32dp"
+            android:text="@string/dialog_button_refund"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/button_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_receipt"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="32dp"
+            android:layout_toEndOf="@+id/button_refund"
+            android:text="@android:string/cancel"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

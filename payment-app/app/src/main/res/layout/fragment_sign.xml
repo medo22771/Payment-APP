@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/message_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"
+        android:text="@string/label_signature"
+        style="@style/YelloTextView" />
+
+    <Button
+        android:id="@+id/btn_confirm_sign"
+        style="?android:attr/buttonBarButtonStyle"
+        android:layout_width="@dimen/size_pin_button"
+        android:layout_height="@dimen/size_pin_button"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@drawable/button_ok_background_selector"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold" />
+
+    <FrameLayout
+        android:id="@+id/signature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/signature_border"
+        android:layout_margin="16dp">
+
+        <com.github.gcacace.signaturepad.views.SignaturePad
+            android:id="@+id/signature_pad"
+            android:layout_width="match_parent"
+            android:layout_height="320dp"
+            app:clearOnDoubleClick="true"
+            app:penColor="@color/colorWhite" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginStart="16dp"
+                android:background="@color/colorWhite" />
+
+            <com.yelloco.payment.utils.fonts.SourceSansProBold
+                android:id="@+id/text_signature_agree"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:textColor="@color/colorWhite"
+                android:text="@string/label_signature_agreement"
+                android:textAlignment="center"
+                android:textSize="25sp" />
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</RelativeLayout>

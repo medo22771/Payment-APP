@@ -1,0 +1,90 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:layout_centerHorizontal="true"
+              android:gravity="center_horizontal"
+              android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="30dp">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/label_receipt_result"
+            style="@style/YelloTextView"/>
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_receipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorWhite"
+            android:layout_marginTop="20dp"
+            android:textSize="@dimen/medium_text_size"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal|center_vertical">
+
+        <ImageView
+            android:id="@+id/image_signature"
+            android:layout_width="256dp"
+            android:layout_height="128dp" />
+
+        <Button
+            android:id="@+id/btn_print"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_rectangle"
+            android:text="@string/label_receipt_print"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size" />
+
+        <Button
+            android:id="@+id/btn_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_rectangle"
+            android:layout_marginTop="10dp"
+            android:text="@string/label_receipt_print_email"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size"/>
+
+        <Button
+            android:id="@+id/btn_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape_rectangle"
+            android:text="@string/label_receipt_print_sms"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size"/>
+
+
+        <Button
+            android:id="@+id/btn_noreceipt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_shape_rectangle"
+            android:text="@string/label_receipt_print_noreceipt"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/medium_text_size"/>
+
+    </LinearLayout>
+</LinearLayout>

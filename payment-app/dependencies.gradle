@@ -1,0 +1,13 @@
+ext {
+    applicationName = 'YelloPay'
+    applicationVersion = '1.0.3'
+    apiStandaloneName = 'YelloPayAPI'
+    simulApplicationName = 'YelloPaySimul'
+    apiTestName = 'YelloPayAPITest'
+
+    projectCompileSdkVersion = 25
+    projectBuildToolsVersion = '26.0.2'
+    projectMinSdkVersion = 21
+    projectTargetSdkVersion = 23
+    projectVersionCode = 1
+}

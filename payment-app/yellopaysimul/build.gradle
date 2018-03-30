@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion projectCompileSdkVersion
+    buildToolsVersion "${projectBuildToolsVersion}"
+
+    defaultConfig {
+        applicationId "com.yelloco.yellopaysimul"
+        minSdkVersion 15//projectMinSdkVersion
+        targetSdkVersion projectTargetSdkVersion
+        versionCode projectVersionCode
+        versionName applicationVersion
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+    }
+    applicationVariants.all { variant -> renameArtifact(variant, "${simulApplicationName}-${defaultConfig.versionName}") }
+    buildTypes {
+        release {
+            minifyEnabled false
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    testCompile 'junit:junit:4.12'
+    compile project(path: ':api')
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="size_processing_icon">100dp</dimen>
+    <!-- TODO: Avoid using "px" as units; use "dp" instead-->
+    <dimen name="size_pin_button">95px</dimen>
+    <dimen name="margin_pin_button">10dp</dimen>
+    <dimen name="transaction_text_size">38px</dimen>
+    <dimen name="currency_edit_text_size">50px</dimen>
+    <dimen name="medium_text_size">30px</dimen>
+    <dimen name="high_text_size">40px</dimen>
+    <dimen name="button_portrait_text_size">28px</dimen>
+    <dimen name="amount_buttons_bottom_margin">75px</dimen>
+</resources>

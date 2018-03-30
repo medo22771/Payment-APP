@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/colorWhite"
+    android:orientation="horizontal">
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/history_row_time"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_weight="2"
+        android:theme="@style/HistoryTableTextStyle" />
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/history_row_transaction_id"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_marginStart="32dp"
+        android:layout_weight="2"
+        android:theme="@style/HistoryTableTextStyle" />
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/history_row_card_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_weight="2"
+        android:textAlignment="center"
+        android:theme="@style/HistoryTableTextStyle" />
+
+    <com.yelloco.payment.utils.fonts.SourceSansProBold
+        android:id="@+id/history_row_amount"
+        android:layout_width="24dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|start"
+        android:layout_marginStart="16dp"
+        android:layout_weight="1"
+        android:textAlignment="textStart"
+        android:theme="@style/HistoryTableTextStyle" />
+
+    <ImageView
+        android:id="@+id/history_row_status"
+        android:layout_width="wrap_content"
+        android:layout_height="24dp"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:src="@drawable/trx_status_ok" />
+
+    <ImageView
+        android:id="@+id/history_row_receipt"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_weight="1" />
+
+</LinearLayout>

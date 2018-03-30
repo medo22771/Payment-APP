@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="gateway_preferences_values">
+        <item>@string/gateway_disable</item>
+        <item>@string/gateway_nexo_test</item>
+        <item>@string/gateway_safecharge</item>
+        <item>@string/gateway_yello</item>
+    </string-array>
+
+    <string-array name="gateway_preferences_yello_url_values">
+        <item>@string/gateway_yello_prod_url</item>
+        <item>@string/gateway_yello_test_url</item>
+    </string-array>
+</resources>

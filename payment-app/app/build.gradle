@@ -1,0 +1,91 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion projectCompileSdkVersion
+    buildToolsVersion "${projectBuildToolsVersion}"
+    defaultConfig {
+        applicationId "com.yelloco.payment"
+        minSdkVersion 15//projectMinSdkVersion
+        targetSdkVersion projectTargetSdkVersion
+        versionCode projectVersionCode
+        versionName applicationVersion
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+    }
+    applicationVariants.all { variant -> renameArtifact(variant, "${applicationName}-${defaultConfig.versionName}") }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    flavorDimensions "default"
+    configurations.all {
+        resolutionStrategy.force 'com.google.code.findbugs:jsr305:1.3.9'
+        all*.exclude group: 'xpp3', module: 'xpp3'
+    }
+    lintOptions {
+        //TODO remove InvalidPackage when it is removed from payment framework dependency
+        //TODO fix DuplicateDefinition in proper way - Lint for some reason does not recognize that
+        // there are 2 flavours having same resource
+        disable 'InvalidPackage', 'OldTargetApi', 'GradleDependency', 'DuplicateDefinition'
+        /* Would be really nice to have this enabled, so far:
+        Ran lint on variant mainRelease: 484 issues found
+        Ran lint on variant simulatorDebug: 274 issues found
+        Ran lint on variant simulatorRelease: 274 issues found
+        Ran lint on variant mainDebug: 484 issues found*/
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    testOptions {
+        unitTests.returnDefaultValues = true
+        unitTests.includeAndroidResources = true
+    }
+}
+
+
+
+dependencies {
+    implementation 'com.android.support:support-v4:25.4.0'
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.google.android.gms:play-services:9.8.0'
+    compile 'com.android.volley:volley:1.0.0'
+    compile 'com.android.support:appcompat-v7:25.4.0'
+    compile 'com.android.support:preference-v14:25.4.0'
+    compile 'com.android.support:design:25.4.0'
+    compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.android.support:recyclerview-v7:25.4.0'
+    compile 'com.google.guava:guava:22.0-android'
+    //compile 'com.alcineo:payment-framework:2.1.4'
+    compile 'com.neovisionaries:nv-i18n:1.18'
+    compile 'org.slf4j:slf4j-api:1.7.19'
+    compile 'org.apache.commons:commons-collections4:4.1'
+    compile 'yogesh.firzen:MukkiyaSevaigal:1.0.6'
+    compile 'yogesh.firzen:FilesLister:1.0.1.f'
+    compile 'commons-io:commons-io:2.0.1'
+    compile 'com.github.BlacKCaT27:CurrencyEditText:v1.4.4'
+    compile 'com.github.gcacace:signature-pad:1.2.1'
+    //    compile 'com.yelloco:nexoProtocolRetailer:2.0.6'
+    //    compile 'com.yelloco:nexoProtocolAcquirer:2.0.6'
+    //    compile 'com.yelloco:xmlProtocolParser:2.0.6'
+    compile('org.simpleframework:simple-xml:2.7.1') {
+        exclude module: 'stax-api'
+    }
+    compile 'com.squareup.okhttp3:okhttp:3.9.0'
+    compile project(path: ':api')
+    compile project(path: ':crypto')
+    //compile 'com.seikoinstruments:SiiAndroidSDK:1.81'
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.mockito:mockito-core:2.11.0'
+    testCompile 'org.hamcrest:java-hamcrest:2.0.0.0'
+    testCompile 'org.robolectric:robolectric:3.6.1'
+    implementation files('libs/payment-framework-2.1.4.jar')
+    implementation files('libs/SiiAndroidSDK.jar')
+    implementation files('libs/nexoProtocolRetailer-2.0.6.jar')
+    implementation files('libs/xmlProtocolParser-2.0.6.jar')
+    implementation files('libs/nexoProtocolAcquirer-2.0.6.jar')
+    implementation files('libs/core-3.3.0.jar')
+    implementation files('libs/javase-3.3.0.jar')
+}

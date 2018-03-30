@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/text_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text=""
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:id="@+id/layout_rate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/text_rate"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="85dp">
+
+            <ImageView
+                android:id="@+id/rate1"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/star_inactive" />
+
+            <ImageView
+                android:id="@+id/rate2"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/star_inactive" />
+
+            <ImageView
+                android:id="@+id/rate3"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/star_inactive" />
+
+            <ImageView
+                android:id="@+id/rate4"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/star_inactive" />
+
+            <ImageView
+                android:id="@+id/rate5"
+                android:layout_width="95dp"
+                android:layout_height="95dp"
+                android:background="@drawable/star_inactive" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="24dp"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_cancel_rate"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/button_cancel_background_selector" />
+
+        <Button
+            android:id="@+id/btn_val_rate"
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_ok_background_selector"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</RelativeLayout>
