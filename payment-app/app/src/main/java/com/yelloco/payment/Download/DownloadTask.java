@@ -30,7 +30,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- * Created by Desktop1 on 27-Mar-18.
+ * Created by Ahmed on 27-Mar-18.
  */
 
 public class DownloadTask extends AppCompatActivity
@@ -73,7 +73,7 @@ public class DownloadTask extends AppCompatActivity
             try
             {   pDialog.show(); }
             catch(Exception e)
-            {   Log.i("Error" , "DwnldTask 0003: " + e.toString()); }
+            {   Log.i("Error" , "DwnTask 0001: " + e.toString()); }
         }
 
         @Override

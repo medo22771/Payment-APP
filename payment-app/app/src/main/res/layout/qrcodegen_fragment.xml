@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#FFF">
+    >
 
 
     <LinearLayout
@@ -18,7 +18,7 @@
             android:layout_weight="1"
             android:id="@+id/QRCodeImage"
             android:src="@mipmap/ic_launcher"
-            android:tag="NULL">
+            android:tag="NotLoaded">
 
         </ImageView>
 
@@ -36,12 +36,12 @@
 
         <TextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Thank you for your business.To download the electronic receipt please scan the image above with your mobile"
+            android:layout_height="0dp"
+            android:text="@string/QRCodeCreated"
             android:layout_gravity="center"
             android:gravity="center"
-            android:textColor="#000"
-            android:textSize="20dp"
+            android:textColor="#FFF"
+            android:textSize="20sp"
             android:layout_weight="1">
 
         </TextView>
@@ -50,8 +50,8 @@
         <Button
             android:id="@+id/DwnBtn"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Download Receipt"
+            android:layout_height="0dp"
+            android:text="@string/DwnReceipt"
             android:textColor="#000"
             android:layout_weight="1"
             android:layout_marginTop="10dp">

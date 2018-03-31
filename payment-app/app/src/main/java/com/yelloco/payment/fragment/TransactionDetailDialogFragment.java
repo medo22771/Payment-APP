@@ -53,7 +53,7 @@ public class TransactionDetailDialogFragment extends DialogFragment {
 
     private static final String KEY_ID = "key_id";
 
-    private long mTransID = 150;
+    private long mTransID;
 
     private CurrencyEditText mAmount;
     private ImageView mStatus;
@@ -161,7 +161,7 @@ public class TransactionDetailDialogFragment extends DialogFragment {
         mReceiptBtn = (TextView) v.findViewById(R.id.button_receipt);
         mRefundBtn = (TextView) v.findViewById(R.id.button_refund);
         mCancelBtn = (TextView) v.findViewById(R.id.button_cancel);
-        mGenQRCBtn = (TextView) v.findViewById(R.id.button_QRCode);
+        mGenQRCBtn = (TextView) v.findViewById(R.id.EReceiptBtn);
 
         mNotesBtn.setOnClickListener(notImplementedClick);
 
@@ -216,16 +216,15 @@ public class TransactionDetailDialogFragment extends DialogFragment {
         mGenQRCBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mGenQRCBtn_fn();
+                GenQRCImage();
             }
         });
 
         return v;
     }
 
-    public void mGenQRCBtn_fn()
+    public void GenQRCImage()
     {
-        mTransID = 150;
         if(mTransID != 0)
         {
             SharedPreferences TransactionIDPref = getActivity().getSharedPreferences("TransactionIDDB", Context.MODE_PRIVATE);
@@ -234,9 +233,9 @@ public class TransactionDetailDialogFragment extends DialogFragment {
             QREditor.apply();
 
             QRCodeGenFragment nextFrag = new QRCodeGenFragment();
-            MainActObj.switchFragment(nextFrag, false);
-//            mDrawer.closeDrawer(GravityCompat.START);
+            MainActivity.switchFragment(nextFrag, false);
 
+//-------------------------------------
 //            QRCodeGenFragment nextFrag= new QRCodeGenFragment();
 //            getActivity().getSupportFragmentManager().beginTransaction()
 //                    .replace(R.id.main_container, nextFrag)

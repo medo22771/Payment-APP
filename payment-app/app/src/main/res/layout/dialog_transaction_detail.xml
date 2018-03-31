@@ -39,60 +39,103 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/Operations"
         android:layout_below="@+id/status"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="15dp">
 
-        <com.yelloco.payment.utils.fonts.SourceSansProBold
-            android:id="@+id/button_notes"
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="@string/dialog_button_notes"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp" />
+            android:layout_alignParentLeft="true"
+            android:id="@+id/Left_Container"
+            android:weightSum="2">
 
-        <com.yelloco.payment.utils.fonts.SourceSansProBold
-            android:id="@+id/button_receipt"
+            <com.yelloco.payment.utils.fonts.SourceSansProBold
+                android:id="@+id/button_notes"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/dialog_button_notes"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:layout_weight="1">
+
+            </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+            <com.yelloco.payment.utils.fonts.SourceSansProBold
+                android:id="@+id/button_refund"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@string/dialog_button_refund"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:layout_weight="1">
+
+            </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:text="@string/dialog_button_receipt"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp" />
-
-        <com.yelloco.payment.utils.fonts.SourceSansProBold
-            android:id="@+id/button_refund"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/button_notes"
-            android:layout_marginTop="50dp"
-            android:text="@string/dialog_button_refund"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp" />
-
-        <com.yelloco.payment.utils.fonts.SourceSansProBold
-            android:id="@+id/button_cancel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/button_receipt"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:text="@android:string/cancel"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp" />
-
-        <com.yelloco.payment.utils.fonts.SourceSansProBold
-            android:id="@+id/button_QRCode"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:text="ElecReceipt"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp" />
+            android:id="@+id/Right_Container"
+            android:weightSum="2">
+
+            <com.yelloco.payment.utils.fonts.SourceSansProBold
+                android:id="@+id/button_receipt"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:text="@string/dialog_button_receipt"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:layout_weight="1">
+
+            </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+            <com.yelloco.payment.utils.fonts.SourceSansProBold
+                android:id="@+id/button_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_marginTop="20dp"
+                android:text="@android:string/cancel"
+                android:textColor="@color/colorWhite"
+                android:textSize="30sp"
+                android:layout_weight="1">
+
+            </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+        </LinearLayout>
 
     </RelativeLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/Operations"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:id="@+id/Middle_Container"
+        android:weightSum="1">
+
+        <com.yelloco.payment.utils.fonts.SourceSansProBold
+            android:id="@+id/EReceiptBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/electronic_receipt"
+            android:textColor="@color/colorWhite"
+            android:textSize="30sp"
+            android:layout_weight="1">
+
+        </com.yelloco.payment.utils.fonts.SourceSansProBold>
+
+    </LinearLayout>
 
 </RelativeLayout>

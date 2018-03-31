@@ -49,11 +49,11 @@ public class QRCodeGenFragment extends BaseFragment
     {
         View view = inflater.inflate(R.layout.qrcodegen_fragment, container, false);
 
-        QRImage = (ImageView)view.findViewById(R.id.QRCodeImage);
-        DwnFragBtn = (Button)view.findViewById(R.id.DwnBtn);
-
         SharedPreferences RetrieveData = getActivity().getSharedPreferences("TransactionIDDB", Context.MODE_PRIVATE);
         String QRCode = RetrieveData.getString("QRCode", "Empty No QRCode Sent");
+
+        QRImage = (ImageView)view.findViewById(R.id.QRCodeImage);
+        DwnFragBtn = (Button)view.findViewById(R.id.DwnBtn);
 
         try
         {
@@ -72,7 +72,7 @@ public class QRCodeGenFragment extends BaseFragment
             {
                 if(QRImage.getTag().equals("Loaded"))
                 {
-                    QRImage.setTag("NULL");
+                    QRImage.setTag("NotLoaded");
 
                     DwnReceiptFragment nextFrag = new DwnReceiptFragment();
                     MainActivity.switchFragment(nextFrag, false);
@@ -92,24 +92,10 @@ public class QRCodeGenFragment extends BaseFragment
 
     public void generateImageCode(String ImgCode) throws IOException, WriterException
     {
-        //EditText InputCode = (EditText)findViewById(R.id.CodeToConvert);
-        String code = "" + ImgCode;
-        //String code = "" + FinQRCode;
-        int width = 400;
-        int height = 400; // change the height and width as per yourrequirement
-
-        // (ImageIO.getWriterFormatNames() returns a list of supported formats)
-        //ImageView QRImage = (ImageView)findViewById(R.id.QRCodeImage);
-        //ImageView BCImage = (ImageView)findViewById(R.id.BarCodeImage);
-
         Bitmap bitmap = null;
         try
         {
-
-            //bitmap = encodeAsBitmap(code, BarcodeFormat.CODE_128, 400, 300);
-            //BCImage.setImageBitmap(bitmap);
-
-            bitmap = encodeAsBitmap(code, 400, 300);
+            bitmap = encodeAsBitmap(ImgCode, 400, 300);
             QRImage.setImageBitmap(bitmap);
             QRImage.setTag("Loaded");
 
@@ -141,24 +127,5 @@ public class QRCodeGenFragment extends BaseFragment
         bitmap.setPixels(pixels, 0, width, 0, 0, width, height);
         return bitmap;
     }
-
-    public void DwnBtnClicked(View view)
-    {
-        //Send Code Came after transaction from TransactionDetailDialogFragment
-        //change 150 with FinQRCode
-        //ConnectorObj.sendCodeToMainAct(150);
-    }
-
-    public void RecievedCodeFromMain(long code)
-    {
-        //FinQRCode = code;
-        try
-        {
-            //generateImageCode("" + code);
-        }
-        catch (Exception e)
-        {}
-    }
-
 
 }

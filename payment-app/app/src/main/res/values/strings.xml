@@ -149,5 +149,9 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="QRCodeCreated">Thank you for your business.To download the electronic receipt please scan the image above with your mobile</string>
+    <string name="DwnReceipt">Download Receipt</string>
+    <string name="view_receipt">View Receipt</string>
+    <string name="electronic_receipt">Electronic Receipt</string>
 
 </resources>

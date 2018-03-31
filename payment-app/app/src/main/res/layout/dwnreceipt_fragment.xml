@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent"
-    android:background="#FFF"
-    android:id="@+id/sdsd">
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,7 +16,7 @@
             android:id="@+id/ShowImgBtn"
             android:layout_weight="1"
             android:layout_gravity="center"
-            android:text="View Receipt"
+            android:text="@string/view_receipt"
             android:textColor="#000"
             android:textSize="20sp">
 
@@ -26,7 +24,7 @@
 
         <ImageView
             android:id="@+id/ReceiptImg"
-            android:layout_width="fill_parent"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:src="@mipmap/ic_launcher"

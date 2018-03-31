@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.yelloco.payment.api.test"
-        minSdkVersion 15//projectMinSdkVersion
+        minSdkVersion projectMinSdkVersion
         targetSdkVersion projectTargetSdkVersion
         versionCode projectVersionCode
         versionName applicationVersion

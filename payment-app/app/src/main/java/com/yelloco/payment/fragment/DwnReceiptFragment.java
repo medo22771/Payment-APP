@@ -35,7 +35,7 @@ import com.yelloco.payment.MainActivity;
 import com.yelloco.payment.R;
 
 /**
- * Created by Desktop1 on 27-Mar-18.
+ * Created by Ahmed on 27-Mar-18.
  */
 
 public class DwnReceiptFragment extends Fragment
@@ -48,7 +48,6 @@ public class DwnReceiptFragment extends Fragment
     private ImageView ReceiptImg;
     private static Button ShowReceiptBtn;
     private Context currContext;
-    private String SavedReceiptName;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
     {
@@ -64,8 +63,11 @@ public class DwnReceiptFragment extends Fragment
 
         //Initialization
         ReceiptImg.setImageResource(R.mipmap.ic_launcher);
-        String QRCode = RetrieveData.getString("QRCode", "empty");
-        GenerateFIleUrl = GenerateFIleUrl + QRCode;
+        String QRCode = RetrieveData.getString("QRCode", "Empty No QRCode Sent");
+        if(QRCode.equals("Empty No QRCode Sent"))
+            Log.i("Error", "DwnReceiptFragError 0001: Empty No QRCode" );
+        else
+            GenerateFIleUrl = GenerateFIleUrl + QRCode;
 
         //Actions (Listeners)
         ShowReceiptBtn.setOnClickListener(new View.OnClickListener() {
@@ -76,7 +78,10 @@ public class DwnReceiptFragment extends Fragment
                 SharedPreferences sharedPref = getActivity().getSharedPreferences("ImageDB", Context.MODE_PRIVATE);
                 String ImageName = sharedPref.getString("ImgName", "Image Doesn't Exist Check Your File Explorer");
 
-                ShowImage(ImageName);
+                if(ImageName.equals("Image Doesn't Exist Check Your File Explorer"))
+                    Log.i("Error", "DwnReceiptFragError 0002: Image Doesn't Exist" );
+                else
+                    ShowImage(ImageName);
             }
         });
 
@@ -92,16 +97,14 @@ public class DwnReceiptFragment extends Fragment
         }
         catch (Exception e)
         {
-            Log.i("Error", "DwnReceiptFragError 0001: " + e.toString());
+            Log.i("Error", "DwnReceiptFragError 0003: " + e.toString());
         }
-        //SavedReceiptName = ReceiptName;
     }
 
     public void ShowImage(String ImageName)
     {
         try
         {
-            Log.i("Tester", ImageName);
             Bitmap bmp = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + "/"
                     + "QRC Downloaded Files/" + ImageName);
 //            if(bmp == null)
@@ -127,7 +130,7 @@ public class DwnReceiptFragment extends Fragment
                         @Override
                         public void onResponse(String response)
                         {
-                            Log.i("Tester", response);
+                            //Log.i("Tester", response);
                             ReqQ.stop();
                             new DownloadTask(currContext,GenerateDownloadURL + response + "&p4=" + finalImgCodeName +".png");
                         }
