@@ -44,8 +44,10 @@ import com.yelloco.payment.R;
 public class DwnReceiptFragment extends Fragment
 {
 
-    String GenerateFIleUrl = "http://41.32.255.229:9090/TMS0000707/myresource/receipt?ch1=1&ch2=1&p1=";
-    String GenerateDownloadURL = "http://41.32.255.229:9090/Upload_Download_Service/services/download1?p3=";
+//    String GenerateFIleUrl = "http://41.32.255.229:9090/TMS0000707/myresource/receipt?ch1=1&ch2=1&p1=";
+//    String GenerateDownloadURL = "http://41.32.255.229:9090/Upload_Download_Service/services/download1?p3=";
+    String GenerateFIleUrl = "http://41.32.255.229:8080/TMS0000707/myresource/receipt?ch1=1&ch2=1&p1=";
+    String GenerateDownloadURL = "http://41.32.255.229:8080/Upload_Download_Service/services/download1?p3=";
 
     //TextView ErrorTextView;
     private ImageView ReceiptImg;
