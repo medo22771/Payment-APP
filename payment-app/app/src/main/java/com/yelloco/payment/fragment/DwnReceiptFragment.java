@@ -1,11 +1,13 @@
 package com.yelloco.payment.fragment;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Rect;
 import android.os.Environment;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -13,6 +15,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -42,7 +45,7 @@ public class DwnReceiptFragment extends Fragment
 {
 
     String GenerateFIleUrl = "http://41.32.255.229:9090/TMS0000707/myresource/receipt?ch1=1&ch2=1&p1=";
-    String GenerateDownloadURL = "http://41.32.255.229:8080/Upload_Download_Service/services/download1?p3=";
+    String GenerateDownloadURL = "http://41.32.255.229:9090/Upload_Download_Service/services/download1?p3=";
 
     //TextView ErrorTextView;
     private ImageView ReceiptImg;
@@ -62,10 +65,14 @@ public class DwnReceiptFragment extends Fragment
         ShowReceiptBtn = (Button)view.findViewById(R.id.ShowImgBtn);
 
         //Initialization
-        ReceiptImg.setImageResource(R.mipmap.ic_launcher);
+        //ReceiptImg.setImageResource(R.mipmap.ic_launcher);
+//        String QRCode = "210";
         String QRCode = RetrieveData.getString("QRCode", "Empty No QRCode Sent");
         if(QRCode.equals("Empty No QRCode Sent"))
+        {
+            Toast.makeText(currContext, "DwnReceiptFragError 0001: Empty No QRCode", Toast.LENGTH_LONG).show();
             Log.i("Error", "DwnReceiptFragError 0001: Empty No QRCode" );
+        }
         else
             GenerateFIleUrl = GenerateFIleUrl + QRCode;
 
@@ -79,7 +86,10 @@ public class DwnReceiptFragment extends Fragment
                 String ImageName = sharedPref.getString("ImgName", "Image Doesn't Exist Check Your File Explorer");
 
                 if(ImageName.equals("Image Doesn't Exist Check Your File Explorer"))
+                {
+                    Toast.makeText(currContext, "DwnReceiptFragError 0002: Image Doesn't Exist", Toast.LENGTH_LONG).show();
                     Log.i("Error", "DwnReceiptFragError 0002: Image Doesn't Exist" );
+                }
                 else
                     ShowImage(ImageName);
             }
@@ -103,19 +113,33 @@ public class DwnReceiptFragment extends Fragment
 
     public void ShowImage(String ImageName)
     {
+        final ProgressDialog ShowImgDialog = new ProgressDialog(currContext);
+        ShowImgDialog.setMessage("Loading Image...");
+        ShowImgDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+        try
+        {   ShowImgDialog.show(); }
+        catch(Exception e)
+        {   Log.i("Error" , "DwnReceiptFragError 0002: " + e.toString()); }
         try
         {
-            Bitmap bmp = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + "/"
+            final Bitmap bmp = BitmapFactory.decodeFile(Environment.getExternalStorageDirectory().toString() + "/"
                     + "QRC Downloaded Files/" + ImageName);
 //            if(bmp == null)
 //                Log.i("HAMADA",Environment.getExternalStorageDirectory().toString() + "/"
 //                        + "QRC Downloaded Files/" + ImageName);
-            ReceiptImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, bmp.getWidth(), bmp.getHeight(), true));
+            new Handler().postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    ShowImgDialog.dismiss();
+                    ReceiptImg.setImageBitmap(Bitmap.createScaledBitmap(bmp, bmp.getWidth(), bmp.getHeight(), true));
+                }
+            }, 400);
+
         }
         catch(Exception e)
         {
             ReceiptImg.setImageResource(R.drawable.cast_ic_notification_disconnect);
-            Log.i("Error", "DwnReceiptFragError 0002: " + e.toString());
+            Log.i("Error", "DwnReceiptFragError 0003: " + e.toString());
         }
     }
 
@@ -124,6 +148,14 @@ public class DwnReceiptFragment extends Fragment
         final String finalImgCodeName = ImageCodeName;
         try
         {
+            final ProgressDialog processDialog = new ProgressDialog(currContext);
+            processDialog.setMessage("Processing...");
+            processDialog.getWindow().setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
+            try
+            {   processDialog.show(); }
+            catch(Exception e)
+            {   Log.i("Error" , "DwnReceiptFragError 0004: " + e.toString()); }
+
             final RequestQueue ReqQ = Volley.newRequestQueue(getActivity().getApplicationContext());
             StringRequest StrReq = new StringRequest(Request.Method.GET, GenerateFIleUrl,
                     new Response.Listener<String>() {
@@ -132,14 +164,16 @@ public class DwnReceiptFragment extends Fragment
                         {
                             //Log.i("Tester", response);
                             ReqQ.stop();
+                            processDialog.dismiss();
                             new DownloadTask(currContext,GenerateDownloadURL + response + "&p4=" + finalImgCodeName +".png");
                         }
                     }, new Response.ErrorListener() {
                 @Override
                 public void onErrorResponse(VolleyError error)
                 {
-                    Log.i("Error", "DwnReceiptFragError 0003: " + error.toString());
+                    Log.i("Error", "DwnReceiptFragError 0005: " + error.toString());
                     ReqQ.stop();
+                    processDialog.dismiss();
                     String message = "Unknown Error";
                     if (error instanceof NetworkError) {
                         message = "Cannot connect to Internet...Please check your connection!";
@@ -162,7 +196,7 @@ public class DwnReceiptFragment extends Fragment
         }
         catch(Exception e)
         {
-            Log.i("Error", "DwnReceiptFragError 0004: " + e.toString());
+            Log.i("Error", "DwnReceiptFragError 0006: " + e.toString());
         }
     }
 

@@ -31,17 +31,11 @@ import yogesh.firzen.mukkiasevaigal.S;
 import static android.graphics.Color.BLACK;
 import static android.graphics.Color.WHITE;
 
-/**
- * Created by Desktop1 on 27-Mar-18.
- */
 
 public class QRCodeGenFragment extends BaseFragment
 {
-    private static long FinQRCode;
-
     private static ImageView QRImage;
     private Button DwnFragBtn;
-    private DrawerLayout mDrawer;
     //private MainActivity MainActObj; // init object in createView and use it's functions;
 
     @Override

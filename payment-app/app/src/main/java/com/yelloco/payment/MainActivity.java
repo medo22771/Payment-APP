@@ -224,7 +224,7 @@ public class MainActivity extends BaseActivity implements TransactionListener, B
         }
         if (savedInstanceState == null) {
             initScreen();
-            //mytestinitScreen();
+//            mytestinitScreen();
         } else {
             transactionContext = savedInstanceState.getParcelable(TRANSACTION_CONTEXT);
             amountFragments = savedInstanceState.getIntegerArrayList(AMOUNT_FRAGMENTS);
