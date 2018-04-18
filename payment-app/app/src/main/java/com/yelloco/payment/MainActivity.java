@@ -223,8 +223,8 @@ public class MainActivity extends BaseActivity implements TransactionListener, B
             return;
         }
         if (savedInstanceState == null) {
-            initScreen();
-//            mytestinitScreen();
+//            initScreen();
+            mytestinitScreen();
         } else {
             transactionContext = savedInstanceState.getParcelable(TRANSACTION_CONTEXT);
             amountFragments = savedInstanceState.getIntegerArrayList(AMOUNT_FRAGMENTS);
@@ -375,7 +375,7 @@ public class MainActivity extends BaseActivity implements TransactionListener, B
         QREditor.putString("QRCode", "" + 150);
         QREditor.apply();
 
-        DwnReceiptFragment nextFrag = new DwnReceiptFragment();
+        ReceiptFragment nextFrag = new ReceiptFragment();
         switchFragment(nextFrag, false);
     }
 

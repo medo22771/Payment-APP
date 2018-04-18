@@ -69,6 +69,16 @@
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/button_portrait_text_size"/>
 
+        <Button
+            android:id="@+id/btn_EReceiptBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/button_shape_rectangle"
+            android:text="@string/electronic_receipt"
+            android:textAllCaps="false"
+            android:textColor="@color/colorWhite"
+            android:textSize="@dimen/button_portrait_text_size"/>
+
 
         <Button
             android:id="@+id/btn_noreceipt"
@@ -79,6 +89,9 @@
             android:textAllCaps="false"
             android:textColor="@color/colorWhite"
             android:textSize="@dimen/button_portrait_text_size"/>
+
+
+
 
     </LinearLayout>
 </LinearLayout>
