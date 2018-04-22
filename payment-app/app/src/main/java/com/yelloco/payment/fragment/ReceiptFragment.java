@@ -31,6 +31,7 @@ public class ReceiptFragment extends BaseFragment {
     public static final String FLAG_HISTORY_TRANSACTION = "FLAG_TRANSACTION_HISTORY";
     private static final String KEY_ID = "key_id";
     private long TransID;
+    private Context currContext;
 
     private Button btnNoReceipt;
     private Button btnSMS;
@@ -62,6 +63,10 @@ public class ReceiptFragment extends BaseFragment {
 
 
         View view = inflater.inflate(R.layout.fragment_receipt, container, false);
+
+        while(currContext == null)
+            currContext = getActivity().getApplicationContext();
+
         TextView textResult = (TextView) view.findViewById(R.id.text_result);
         ImageView imageSignature = (ImageView) view.findViewById(R.id.image_signature);
         receipt = getArguments().getString(TEXT_RECEIPT, "");
@@ -152,7 +157,7 @@ public class ReceiptFragment extends BaseFragment {
 
     public void GenQRCImage()
     {
-        if(TransID != 0)
+        if(TransID > 0 && TransID <= 330)
         {
             SharedPreferences TransactionIDPref = getActivity().getSharedPreferences("TransactionIDDB", Context.MODE_PRIVATE);
             SharedPreferences.Editor QREditor = TransactionIDPref.edit();
@@ -178,5 +183,7 @@ public class ReceiptFragment extends BaseFragment {
 //-------------------------------------
             //ConnectorObj.fromTDetailDialogToMain(mTransID);
         }
+        else
+            Toast.makeText(currContext,"Transaction Failed So There Is No Transaction ID",Toast.LENGTH_LONG).show();
     }
 }
